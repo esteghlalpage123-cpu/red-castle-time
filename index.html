@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>Red Castle Time | قلعه سرخ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+:root{--bg:#070707;--panel:rgba(15,15,17,.72);--red:#b00020;--red2:#ef233c;--text:#f4f1f1;--muted:#a7a1a1;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Vazirmatn,Arial,sans-serif;line-height:1.9}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(0,0,0,.55),#070707 78%),url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;filter:grayscale(.9) brightness(.34)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 50% 20%,rgba(176,0,32,.14),transparent 36%),linear-gradient(90deg,rgba(0,0,0,.25),rgba(0,0,0,.72))}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+.nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(1080px,92%);z-index:20;padding:10px 16px;border:1px solid var(--line);background:rgba(12,12,13,.58);backdrop-filter:blur(16px);border-radius:18px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 12px 40px #0008}
+.brand{font-family:Cinzel,serif;font-weight:800;letter-spacing:1px;direction:ltr;color:#fff}
+.brand span{color:var(--red2)}
+.navlinks{display:flex;gap:6px;align-items:center}
+.navlinks a{padding:8px 12px;border-radius:12px;color:#ddd;font-size:14px}
+.navlinks a:hover{background:rgba(176,0,32,.18);color:#fff}
+.menu{display:none;background:none;border:0;color:#fff;font-size:25px}
+.hero{min-height:94vh;display:grid;place-items:center;text-align:center;padding-top:100px}
+.emblem{width:116px;height:116px;border:1px solid rgba(239,35,60,.55);border-radius:50%;display:grid;place-items:center;margin:0 auto 22px;box-shadow:0 0 70px rgba(176,0,32,.18),inset 0 0 30px rgba(176,0,32,.1);position:relative}
+.emblem:before{content:"⚔";font-size:45px;color:var(--red2);transform:rotate(-8deg)}
+.eyebrow{color:#c8bcbc;letter-spacing:4px;font-size:12px}
+h1{font-family:Cinzel,serif;font-size:clamp(38px,7vw,78px);line-height:1.05;margin:12px 0;direction:ltr;text-shadow:0 8px 40px #000}
+h1 span{color:var(--red2)}
+.hero p{max-width:690px;margin:0 auto;color:#c7c1c1;font-size:17px}
+.btn{display:inline-block;margin-top:28px;padding:11px 23px;border-radius:12px;border:1px solid rgba(239,35,60,.5);background:linear-gradient(180deg,#b00020,#780016);box-shadow:0 12px 35px rgba(176,0,32,.18);font-weight:700}
+section{padding:92px 0}
+.section-head{margin-bottom:34px}
+.kicker{color:var(--red2);font-size:12px;letter-spacing:2px}
+h2{font-size:32px;margin:5px 0 8px}
+.lead{color:var(--muted);max-width:700px}
+.glass{background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(14px);border-radius:22px;box-shadow:0 20px 70px #0007}
+.about{padding:30px}
+.quote{margin-top:24px;padding:18px 20px;border-right:3px solid var(--red2);background:rgba(176,0,32,.07);font-size:18px;font-weight:700}
+.members{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+.member{text-align:center;padding:20px 10px;border-radius:20px;transition:.25s}
+.member:hover{background:rgba(255,255,255,.025);transform:translateY(-3px)}
+.avatar{width:104px;height:104px;border-radius:50%;margin:auto auto 12px;display:grid;place-items:center;border:1px solid rgba(239,35,60,.55);background:radial-gradient(circle at 35% 25%,#402027,#111 62%);box-shadow:0 0 32px rgba(176,0,32,.12);font-family:Cinzel;font-size:27px;color:#eee}
+.member small{color:#918b8b}
+.rules{min-height:270px;display:grid;place-items:center;text-align:center;padding:35px}
+.lock{font-size:42px;color:var(--red2);margin-bottom:6px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-card{padding:28px}
+.label{color:#8f8989;font-size:13px}
+.leader{font-size:22px;font-weight:800;margin:4px 0}
+.rubika{display:inline-block;margin-top:10px;padding:9px 14px;border-radius:10px;background:#181818;border:1px solid var(--line);direction:ltr}
+footer{padding:30px 0 42px;border-top:1px solid var(--line);color:#777;text-align:center;font-size:13px}
+@media(max-width:760px){
+.nav{top:10px}.menu{display:block}.navlinks{display:none;position:absolute;top:60px;right:0;left:0;padding:10px;background:rgba(10,10,11,.96);border:1px solid var(--line);border-radius:16px;flex-direction:column}.navlinks.open{display:flex}.navlinks a{width:100%;text-align:center}
+.hero{min-height:86vh}.members{grid-template-columns:repeat(2,1fr);gap:8px}.contact{grid-template-columns:1fr}section{padding:72px 0}h2{font-size:27px}.hero p{font-size:15px}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="#home">RED <span>CASTLE</span> TIME</a>
+  <button class="menu" aria-label="منو">☰</button>
+  <div class="navlinks">
+    <a href="#about">درباره کلن</a><a href="#members">اعضای کلن</a><a href="#rules">قوانین</a><a href="#contact">ارتباط</a>
+  </div>
+</nav>
+
+<main id="home">
+<section class="hero">
+  <div class="container">
+    <div class="emblem" aria-label="نشان قلعه سرخ"></div>
+    <div class="eyebrow">RED CASTLE TIME</div>
+    <h1>THE <span>RED</span> CASTLE</h1>
+    <p>به قلعه سرخ خوش آمدید؛ جایی برای بازیکنانی که در مافیا، فقط بازی نمی‌کنند—بلکه برای هر تصمیم، هر رأی و هر کلمه استراتژی دارند.</p>
+    <a class="btn" href="#about">ورود به قلعه</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head"><div class="kicker">ABOUT THE CLAN</div><h2>درباره کلن</h2></div>
+    <div class="glass about">
+      <p>Red Castle Time یک جمع مافیایی با روحیه رقابتی و فضای دوستانه است؛ قلعه‌ای که ارزشش را از اعضایش می‌گیرد. اینجا هر بازیکن سبک خودش را دارد، اما همه یک قانون نانوشته را می‌شناسند: هوش، تمرکز و تصمیم درست، مسیر بازی را عوض می‌کند.</p>
+      <div class="quote">«در قلعه سرخ، اعتماد یک انتخاب نیست؛ یک آزمون است.»</div>
+    </div>
+  </div>
+</section>
+
+<section id="members">
+  <div class="container">
+    <div class="section-head"><div class="kicker">THE CASTLE CREW</div><h2>اعضای کلن</h2><p class="lead">هر نام، یک شخصیت. هر آواتار، یک جایگاه در قلعه سرخ.</p></div>
+    <div class="members">
+      <div class="member"><div class="avatar">MS</div><strong>MR_Smith</strong></div>
+      <div class="member"><div class="avatar">MS</div><strong>MRS_smith</strong></div>
+      <div class="member"><div class="avatar">S</div><strong>SASY</strong></div>
+      <div class="member"><div class="avatar">ZZ</div><strong>MRS_ZiZi</strong></div>
+      <div class="member"><div class="avatar">MA</div><strong>MR_ARASH</strong></div>
+      <div class="member"><div class="avatar">H</div><strong>Hmid</strong></div>
+      <div class="member"><div class="avatar">AS</div><strong>Ali salhi</strong></div>
+      <div class="member"><div class="avatar">A</div><strong>Arash</strong></div>
+      <div class="member"><div class="avatar">L</div><strong>Latar</strong></div>
+      <div class="member"><div class="avatar">Y</div><strong>Yashar</strong></div>
+    </div>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="container">
+    <div class="section-head"><div class="kicker">THE CODE</div><h2>قوانین</h2></div>
+    <div class="glass rules"><div><div class="lock">⚔</div><h3>این بخش در حال آماده‌سازی است</h3><p class="lead">قوانین رسمی Red Castle Time به‌زودی در این بخش قرار می‌گیرد.</p></div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head"><div class="kicker">CONTACT THE LEADER</div><h2>ارتباط با کلن</h2></div>
+    <div class="contact">
+      <div class="glass contact-card"><div class="label">لیدر کلن</div><div class="leader">فرزاد</div><p class="lead">برای ارتباط با لیدر قلعه سرخ از روبیکا استفاده کنید.</p><span class="rubika">@Farzad232344</span></div>
+      <div class="glass contact-card"><div class="label">RED CASTLE TIME</div><div class="leader">قلعه سرخ</div><p class="lead">اینجا خانه‌ی بازیکنانی است که بازی را جدی می‌گیرند.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>© 2026 Red Castle Time — All rights reserved.</footer>
+
+<script>
+const menu=document.querySelector('.menu'), links=document.querySelector('.navlinks');
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+</script>
+</body>
+</html>
