@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://esteghlalpage123-cpu.github.io/red-castle-time/sitemap.xml
